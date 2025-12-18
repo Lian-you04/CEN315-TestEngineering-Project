@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBookingApp.Api", "GymBookingApp.Api\GymBookingApp.Api.csproj", "{07F98286-2FF2-42C1-BF94-D19C3C139D16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBookingApp.Tests.Unit", "GymBookingApp.Tests.Unit\GymBookingApp.Tests.Unit.csproj", "{3A28F007-B44C-48ED-99AC-1502D7FDF0EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBookingApp.Tests.Integration", "GymBookingApp.Tests.Integration\GymBookingApp.Tests.Integration.csproj", "{FCC2B8DF-6DD5-4BF2-B7BB-37AF3E99C4D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymBookingApp.Tests.BDD", "GymBookingApp.Tests.BDD\GymBookingApp.Tests.BDD.csproj", "{A8D08398-C0DD-4EBC-8BBE-A544CA20A9A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{3A28F007-B44C-48ED-99AC-1502D7FDF0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A28F007-B44C-48ED-99AC-1502D7FDF0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A28F007-B44C-48ED-99AC-1502D7FDF0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC2B8DF-6DD5-4BF2-B7BB-37AF3E99C4D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC2B8DF-6DD5-4BF2-B7BB-37AF3E99C4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC2B8DF-6DD5-4BF2-B7BB-37AF3E99C4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC2B8DF-6DD5-4BF2-B7BB-37AF3E99C4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D08398-C0DD-4EBC-8BBE-A544CA20A9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D08398-C0DD-4EBC-8BBE-A544CA20A9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D08398-C0DD-4EBC-8BBE-A544CA20A9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D08398-C0DD-4EBC-8BBE-A544CA20A9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

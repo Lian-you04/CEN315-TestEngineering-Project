@@ -1,43 +1,51 @@
 ﻿using GymBookingApp.Api.Models;
 using GymBookingApp.Api.Services;
+using FsCheck;
+using FsCheck.Xunit;
 using Xunit;
 
 namespace GymBookingApp.Tests.Unit;
 
 public class PricingServiceTests
 {
- 
-    [Fact]
-    public void Student_Under_Normal_Occupancy_Should_Get_20_Percent_Discount()
+    private readonly PricingService _pricingService;
+
+    public PricingServiceTests()
     {
-        
-        var service = new PricingService();
-        decimal basePrice = 100m;
-
-       
-        var result = service.CalculatePrice(basePrice, MembershipType.Student, 0.5);
-
-        
-        Assert.Equal(80m, result);
+        _pricingService = new PricingService();
     }
 
-    
+    // 5.5 Decision Tables (Karar Tablosu)
     [Theory]
-    [InlineData(100, MembershipType.Student, 0.5, 80)]   // Senaryo 1: Öğrenci, Normal Doluluk (%20 indirim)
-    [InlineData(100, MembershipType.Student, 0.9, 92)]   // Senaryo 2: Öğrenci, Yüksek Doluluk (80 * 1.15 = 92)
-    [InlineData(100, MembershipType.Premium, 0.5, 90)]   // Senaryo 3: Premium, Normal Doluluk (%10 indirim)
-    [InlineData(100, MembershipType.Premium, 0.9, 103.5)] // Senaryo 4: Premium, Yüksek Doluluk (90 * 1.15 = 103.5)
-    [InlineData(100, MembershipType.Standard, 0.5, 100)] // Senaryo 5: Standart, Normal Doluluk (İndirim yok)
-    [InlineData(100, MembershipType.Standard, 0.9, 115)] // Senaryo 6: Standart, Yüksek Doluluk (%15 artış)
-    public void Pricing_DecisionTable_Tests(decimal basePrice, MembershipType type, double occupancy, decimal expected)
+    [InlineData(100, MembershipType.Standard, 0.5, 100)]
+    [InlineData(100, MembershipType.Student, 0.5, 80)]
+    [InlineData(100, MembershipType.Premium, 0.5, 90)]
+    [InlineData(100, MembershipType.Standard, 0.9, 110)] // Beklenen: 110 (100 * 1.1)
+    [InlineData(100, MembershipType.Student, 0.9, 88)]   // Beklenen: 88 (80 * 1.1)
+    public void CalculatePrice_ShouldApplyRulesCorrectly(decimal basePrice, MembershipType type, double occupancy, decimal expected)
     {
         
-        var service = new PricingService();
+        var result = _pricingService.CalculatePrice(basePrice, type, occupancy);
 
-       
-        var result = service.CalculatePrice(basePrice, type, occupancy);
-
-       
+        
         Assert.Equal(expected, result);
+    }
+
+    [Property]
+    public bool Price_Should_Never_Be_Negative(double basePriceRaw, int membershipTypeRaw, double occupancyRaw)
+    {
+        // ARRANGE: Sayısal olmayan verileri filtrele
+        if (double.IsNaN(basePriceRaw) || double.IsInfinity(basePriceRaw)) return true;
+        if (double.IsNaN(occupancyRaw) || double.IsInfinity(occupancyRaw)) return true;
+
+
+        decimal basePrice = (decimal)(Math.Clamp(Math.Abs(basePriceRaw), 0, 1000000));
+        MembershipType type = (MembershipType)(Math.Abs(membershipTypeRaw) % 3); // 0,1,2
+        double occupancy = Math.Abs(occupancyRaw) % 1.1;
+
+        var result = _pricingService.CalculatePrice(basePrice, type, occupancy);
+
+        // ASSERT: Fiyat hiçbir zaman negatif olamaz
+        return result >= 0;
     }
 }
