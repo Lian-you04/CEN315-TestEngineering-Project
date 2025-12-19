@@ -3,7 +3,12 @@
 public class Reservation
 {
     public int Id { get; set; }
+
     public Member Member { get; set; } = new();
+
     public DateTime BookingDate { get; set; }
+
+    public decimal BasePrice { get; set; }
+
     public decimal FinalPrice { get; set; }
 }

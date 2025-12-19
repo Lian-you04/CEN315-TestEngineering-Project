@@ -8,11 +8,15 @@ public class PricingService : IPricingService
     {
         decimal price = basePrice;
 
-        // 1. Üyelik İndirimleri
-        if (type == MembershipType.Student) price *= 0.8m;     // %20 indirim
-        else if (type == MembershipType.Premium) price *= 0.9m; // %10 indirim
+        if (type == MembershipType.Student)
+        {
+            price *= 0.8m;     // %20 indirim
+        }
+        else if (type == MembershipType.Premium)
+        {
+            price *= 0.9m;     // %10 indirim
+        }
 
-        
         if (occupancy >= 0.8)
         {
             price *= 1.1m;

@@ -34,6 +34,13 @@ public class ReservationsController : ControllerBase
 
         return Ok(reservation);
     }
+
+    [HttpGet]
+    public IActionResult Get()
+    {
+        
+        return Ok(new List<Reservation>());
+    }
 }
 
 
