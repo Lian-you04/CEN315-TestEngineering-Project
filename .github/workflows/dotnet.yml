@@ -19,10 +19,11 @@ jobs:
         dotnet-version: 8.0.x
         
     - name: Restore dependencies
-      run: dotnet restore
+      # GitHub'a projenin hangi klasörde olduğunu tam yoluyla söylüyoruz
+      run: dotnet restore GymBookingApp.Api/GymBookingApp.Api.sln
       
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build GymBookingApp.Api/GymBookingApp.Api.sln --no-restore
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test GymBookingApp.Api/GymBookingApp.Api.sln --no-build --verbosity normal
