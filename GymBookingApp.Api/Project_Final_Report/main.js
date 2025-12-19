@@ -213,10 +213,11 @@ var assemblies = [
   {
     "name": "GymBookingApp.Api",
     "classes": [
-      { "name": "GymBookingApp.Api.Controllers.ReservationRequest", "rp": "GymBookingApp.Api_ReservationRequest.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 52, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "GymBookingApp.Api.Controllers.ReservationsController", "rp": "GymBookingApp.Api_ReservationsController.html", "cl": 16, "ucl": 2, "cal": 18, "tl": 52, "cb": 2, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "GymBookingApp.Api.Controllers.ReservationRequest", "rp": "GymBookingApp.Api_ReservationRequest.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 60, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "GymBookingApp.Api.Controllers.ReservationsController", "rp": "GymBookingApp.Api_ReservationsController.html", "cl": 22, "ucl": 2, "cal": 24, "tl": 60, "cb": 5, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "GymBookingApp.Api.Models.Member", "rp": "GymBookingApp.Api_Member.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 15, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "GymBookingApp.Api.Models.Reservation", "rp": "GymBookingApp.Api_Reservation.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "GymBookingApp.Api.Services.MemberService", "rp": "GymBookingApp.Api_MemberService.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 29, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "GymBookingApp.Api.Services.PricingService", "rp": "GymBookingApp.Api_PricingService.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 27, "cb": 6, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "GymBookingApp.Api.Services.ReservationManager", "rp": "GymBookingApp.Api_ReservationManager.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "Program", "rp": "GymBookingApp.Api_Program.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 29, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
