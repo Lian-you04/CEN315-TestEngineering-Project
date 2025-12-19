@@ -1,0 +1,12 @@
+PAIRWISE TEST MATRIX (PricingService)
+-------------------------------------
+Bu tablo, her parametre çiftinin en az bir kez test edildiðini garanti eder.
+
+Test | Üyelik Tipi | Ýndirim Kuponu | Ekstra Hizmet (Havuz)
+----------------------------------------------------------
+1    | Student     | Yes            | Yes
+2    | Student     | No             | No
+3    | VIP         | Yes            | No
+4    | VIP         | No             | Yes
+5    | Standard    | Yes            | Yes
+6    | Standard    | No             | No
