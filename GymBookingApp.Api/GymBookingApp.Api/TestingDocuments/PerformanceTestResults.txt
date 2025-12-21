@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+
+                              ============================================================
+                                              PERFORMANS TEST RAPORU (DOCKER)
+                              ============================================================
+                              Test Tarihi: 21.12.2025
+                              Ýstek Sayýsý: 100 Ardýþýk GET Ýsteyi
+                              Hedef: http://localhost:8080/api/members
+                              
+                              SONUÇLAR:
+                              - Toplam Süre: 2231,58 ms
+                              - Ortalama Yanýt Süresi: 22,31 ms
+                              - Saniye Baþýna Ýstek (RPS): ~45
+                              
+                              DEÐERLENDÝRME:
+                              Uygulama, Docker konteyneri üzerinde yük altýnda oldukça 
+                              hýzlý ve kararlý bir performans sergilemektedir.
+                              ============================================================

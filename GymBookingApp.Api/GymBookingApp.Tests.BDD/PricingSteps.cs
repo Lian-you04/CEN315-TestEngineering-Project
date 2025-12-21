@@ -5,7 +5,7 @@ using Xunit;
 
 namespace GymBookingApp.Tests.BDD;
 
-[Binding] // SpecFlow'un bu sınıfı feature dosyasıyla eşleştirmesini sağlar
+[Binding] 
 public class PricingSteps
 {
     private decimal _basePrice;
@@ -23,7 +23,7 @@ public class PricingSteps
     [Given(@"the member type is '(.*)'")]
     public void GivenTheMemberTypeIs(string type)
     {
-        // Metin olarak gelen 'Student' bilgisini koddaki Enum tipine çevirir
+        
         _type = Enum.Parse<MembershipType>(type);
     }
 
@@ -42,7 +42,7 @@ public class PricingSteps
     [Then(@"the final price should be (.*)")]
     public void ThenTheFinalPriceShouldBe(decimal expectedPrice)
     {
-        // Hesaplanan fiyatın 88 TL olduğunu doğrular
+      
         Assert.Equal(expectedPrice, _finalPrice);
     }
 }
